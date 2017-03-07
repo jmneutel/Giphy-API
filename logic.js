@@ -55,12 +55,28 @@ $("#add-gif").on("click", function(event) {
                     var p = $("<p>").text("Rating: " + rating);
 
                     var personImage = $("<img>");
-                    personImage.attr("src", results[i].images.fixed_height.url);
+                    personImage.attr("src", results[i].images.fixed_height_still.url);
+                    personImage.attr("data-animate", results[i].images.fixed_height.url);
+                    personImage.attr("data-still", results[i].images.fixed_height_still.url);
+                    personImage.attr("data-state", "still");
+                    personImage.addClass("gif");
 
                     gifDiv.prepend(p);
                     gifDiv.prepend(personImage);
 
                     $("#gifArea").prepend(gifDiv);
+                    $(".gif").on("click", function() {
+                        var state = $(this).attr("data-state");
+                        if (state === "still") {
+
+                            $(this).attr("src", $(this).attr("data-animate"));
+                            $(this).attr("data-state", "animate");
+                        } else {
+                            $(this).attr("src", $(this).attr("data-still"))
+                            $(this).attr("data-state", "still");
+
+                        }
+                    });
                 }
             });
     });
@@ -89,12 +105,29 @@ $("button").on("click", function() {
                 var p = $("<p>").text("Rating: " + rating);
 
                 var personImage = $("<img>");
-                personImage.attr("src", results[i].images.fixed_height.url);
+                personImage.attr("src", results[i].images.fixed_height_still.url);
+                personImage.attr("data-animate", results[i].images.fixed_height.url);
+                personImage.attr("data-still", results[i].images.fixed_height_still.url);
+                personImage.attr("data-state", "still");
+                personImage.addClass("gif");
 
                 gifDiv.prepend(p);
                 gifDiv.prepend(personImage);
 
                 $("#gifArea").prepend(gifDiv);
+
+                $(".gif").on("click", function() {
+                    var state = $(this).attr("data-state");
+                    if (state === "still") {
+
+                        $(this).attr("src", $(this).attr("data-animate"));
+                        $(this).attr("data-state", "animate");
+                    } else {
+                        $(this).attr("src", $(this).attr("data-still"))
+                        $(this).attr("data-state", "still");
+
+                    }
+                });
             }
         });
 });
