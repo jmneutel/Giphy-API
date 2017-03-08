@@ -1,19 +1,19 @@
-var nbaGifs = ["kobe bryant", "lebron james", "michael jordan", "kevin durant"];
+var nbaGifs = ["Kobe Bryant", "Lebron James", "Michael Jordan", "Kevin Durant"];
 
-// Function for displaying movie data
+// Function for displaying gifs
 function renderButtons() {
 
-    // Deleting the movies prior to adding new movies
-    // (this is necessary otherwise you will have repeat buttons)
+    // Deleting the buttons prior to adding new button to avoid repeats
+
     $("#buttons-view").empty();
 
-    // Looping through the array of movies
+    // Looping through the array of terms
     for (var i = 0; i < nbaGifs.length; i++) {
 
-        // Then dynamicaly generating buttons for each movie in the array
+        // Then dynamicaly generating buttons for each term in the array
         // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
         var a = $("<button>");
-        // Adding a class of movie to our button
+        // Adding a class of nbaGif to our button
         a.addClass("nbaGif");
         // Adding a data-attribute
         a.attr("data-person", nbaGifs[i]);
@@ -24,16 +24,16 @@ function renderButtons() {
     }
 }
 
-// This function handles events where a movie button is clicked
+// This function handles events where a term button is clicked
 $("#add-gif").on("click", function(event) {
     event.preventDefault();
     // This line grabs the input from the textbox
     var nbaGif = $("#gif-input").val().trim();
 
-    // Adding movie from the textbox to our array
+    // Adding term from the textbox to our array
     nbaGifs.push(nbaGif);
 
-    // Calling renderButtons which handles the processing of our movie array
+    // Calling renderButtons which handles the processing of our term array
     renderButtons();
     $("button").on("click", function() {
         var person = $(this).attr("data-person");
@@ -52,7 +52,7 @@ $("#add-gif").on("click", function(event) {
 
                     var rating = results[i].rating;
 
-                    var p = $("<p>").text("Rating: " + rating);
+                    var p = $("<p class='rating'>").text("Rating: " + rating);
 
                     var personImage = $("<img>");
                     personImage.attr("src", results[i].images.fixed_height_still.url);
@@ -102,7 +102,7 @@ $("button").on("click", function() {
 
                 var rating = results[i].rating;
 
-                var p = $("<p>").text("Rating: " + rating);
+                var p = $("<p class='rating'>").text("Rating: " + rating);
 
                 var personImage = $("<img>");
                 personImage.attr("src", results[i].images.fixed_height_still.url);

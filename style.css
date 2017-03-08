@@ -1,0 +1,90 @@
+.nbaGif {
+
+	margin-left: 20px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.nbaGif:first-child {
+
+	margin-left: 0px;
+}
+
+body {
+
+	margin-left: 50px;
+	background-image: url("images/basketball.jpg");
+}
+
+.item {
+
+	float: left;
+	margin: 30px;
+	border-color: black;
+	border-style: solid;
+	border-width: 0.5px;
+	background-color: white;
+}
+
+.rating {
+
+	font-weight: bold;
+	margin-top: 15px; 
+	font-family: arial;
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#add-gif {
+	
+	margin-top: 7px;
+	font-size: 15px;
+	padding: 10px;
+}
+
+#add-gif:hover {
+
+	background-color: lightgrey;
+}
+
+#gif-label {
+
+	background-color: chocolate;
+	color: white;
+	font-size: 15px;
+	padding: 5px;
+	font-family: arial;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-color: white;
+	border-style: solid;
+	border-width: 0.1px;
+	font-weight: normal;
+	
+}
+
+#header {
+
+	background-color: chocolate;
+	color: white;
+	padding: 50px;
+	width: 415px;
+	border-color: white;
+	border-style: solid;
+	border-width: 0.5px;
+}
+
+button {
+
+	font-size: 15px;
+	padding: 10px;
+
+}
+
+button:hover {
+
+	border-color: grey;
+	border-style: solid;
+	border-width: 0.5px;
+}
