@@ -8,6 +8,7 @@
 - Click on a gif to watch it and click it again to pause it
 - Add a button by typing in the name of a topic you would like to see
 - Click your personalized button and watch new gifs.
+
 ## Requirements
 - Create an array of strings, each one related to a topic that interests you.
 - Your app should take the topics in this array and create buttons in your HTML.
